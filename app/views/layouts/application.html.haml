@@ -1,3 +1,15 @@
-= render :partial => "layouts/flashes", :locals => { :flash => flash }
-= yield
+!!! XML
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml","xml:lang"=>"en", :lang=>"en"}
+  %head
+    %meta{"http-equiv"=>"Content-type",:content=>"text/html",:charset=>"utf-8"}
+    %title Status Siren
+    =stylesheet_link_tag "azure_admin","azure_admin/themes/green/css/custom"
+    :plain
+      <!--[if IE 8]>    
+        <link rel="stylesheet" href="/stylesheets/azure_admin_ie8.css" type="text/css" media="screen" title="ie8" charset="utf-8" />
+      <![endif]-->
+  %body
+    = render :partial => "layouts/flashes", :locals => { :flash => flash }
+    = yield
   
