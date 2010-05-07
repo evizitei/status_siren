@@ -1,4 +1,4 @@
-#header { background-image: url(../images/header-bg.png) !important; }
+#header { background-image: url(/images/azure_admin/header-bg.png) !important; }
 
 	#header h1#title a { color: #FFF !important; }
 	
@@ -14,7 +14,7 @@
 		opacity: 0.10;
 	}	
 	
-#nav { background-image: url(../images/nav-bg.png) !important; }
+#nav { background-image: url(/images/azure_admin/nav-bg.png) !important; }
 #nav li a { color: #FFF; }
 #nav li.hasSubNav a { background-color: #6A9D2A; color: #FFF; }	
 #nav li .current,
@@ -24,7 +24,7 @@
 #nav li.hover  .sub_nav li a { 	color: #111 !important; }
 .sub_nav { border-bottom: 4px solid #6A9D2A; }	
 
-.portlet-header { background: url(../images/portlet-header-green.png) repeat-x top center; color: #fff; }
+.portlet-header { background: url(/images/azure_admin/portlet-header-green.png) repeat-x top center; color: #fff; }
 .portlet-tab-nav .portlet-tab-nav-active  a { color: #578222; text-decoration: none; }	
 			
 #body h1#pageTitle { color: #578222; }
@@ -34,4 +34,4 @@
 #pg a.current { color: #FFF; border: 1px solid #578222; background-color: #578222; }
 
 button,
-button span { background: transparent url(../images/button_sprite.png) no-repeat; }
+button span { background: transparent url(/images/azure_admin/button_sprite.png) no-repeat; }
