@@ -1,0 +1,11 @@
+log/development.log
+log/newrelic_agent.3000.log
+log/*.*
+.idea
+tmp
+.idea/*.*
+dump/*.*
+tmp/*.*
+*~
+*.swp
+*.swo
