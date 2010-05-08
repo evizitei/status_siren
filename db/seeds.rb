@@ -5,3 +5,7 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+bcfpd = Department.find_or_create_by_name(:name=>"Boone County Fire Protection District")
+ethan = User.find_or_create_by_email("ethan.vizitei@gmail.com")
+ethan.update_attributes!(:name=>"Ethan Vizitei",:department_id=>bcfpd.id,:password=>"fire_district",:email=>"ethan.vizitei@gmail.com",:email_confirmed=>true,:mobile_phone=>"5732395840")
+ethan.update_password("fire_district","fire_district")

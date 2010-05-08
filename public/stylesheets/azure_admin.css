@@ -123,7 +123,7 @@ button span {
 button,
 button span
 {
-	background: transparent url(../themes/blue/images/button_sprite.png) no-repeat;
+	background: transparent url(/images/azure_admin/button_sprite.png) no-repeat;
 }	
 
 button,
@@ -165,7 +165,7 @@ button.btn-sec span { background-position: left -100px !important; }
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 #header
 {
-	background: url(../themes/blue/images/header-bg.png) repeat-x 0 0;
+	background: url(/images/azure_admin/header-bg.png) repeat-x 0 0;
 	width: 100%;
 	height: 120px;
 	position: relative;
@@ -230,7 +230,7 @@ button.btn-sec span { background-position: left -100px !important; }
 /* -------------------------------------------------------------
 5. NAVIGATION
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-#nav { background-image: url(../themes/blue/images/nav-bg.png) !important; width: 100%; height: 38px; position: relative; z-index: 80; }
+#nav { background-image: url(/images/azure_admin/nav-bg.png) !important; width: 100%; height: 38px; position: relative; z-index: 80; }
 
 	/* HACK HACK HACK: Target opera browsers to fix navigation height */
 	@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
@@ -432,7 +432,7 @@ button.btn-sec span { background-position: left -100px !important; }
 
 	.portlet-header
 	{
-		background: url(../themes/blue/images/portlet-header.png) repeat-x top center;
+		background: url(/images/azure_admin/portlet-header.png) repeat-x top center;
 		color: #FFF;
 		padding: 10px 15px;
 		cursor: pointer;		

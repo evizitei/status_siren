@@ -9,7 +9,84 @@
       <!--[if IE 8]>    
         <link rel="stylesheet" href="/stylesheets/azure_admin_ie8.css" type="text/css" media="screen" title="ie8" charset="utf-8" />
       <![endif]-->
-  %body
-    = render :partial => "layouts/flashes", :locals => { :flash => flash }
-    = yield
-  
+      <!--[if IE 7]>  
+        <link rel="stylesheet" href="/stylesheets/azure_admin_ie7.css" type="text/css" media="screen" title="ie7" charset="utf-8" />
+      <![endif]-->
+  %body.layout-fixed
+    #page
+      
+      #header
+        .pad
+          %h1#title
+            %a{:href=>""}
+              %img{:src=>"/images/azure_admin/azure-title.png",:alt=>"Azure Admin"}
+          -if current_user
+            #info
+              #infoText
+                Welcome back 
+                %a{:href=>"javascript:;"} John Roberts
+                %br 
+                Today is November 15, 2009 17:24
+                %a{:href=>"javascript:;"} View Website
+                | 
+                %a{:href=>"javascript:;"} View Latest Activity
+              .underlay
+      
+      #nav.clearfix
+        %ul
+          -if current_user
+            %li
+              %a.current{:href=>""} Dashboard
+            %li
+              %a{:href=>"javascript:;"} Mega Drop Menu
+              .sub_nav
+                .col
+                  %h3 Help Links
+                  %ul
+                    %li
+                      %a{:href=>"http://google.com"} Google
+                    %li
+                      %a{:href=>"http://yahoo.com"} Yahoo
+                    %li
+                      %a{:href=>"http://bing.com"} Bing
+                    %li
+                      %a{:href=>"javascript:;"} Section #4
+
+                .col
+                  %h3 Help Links
+                  %ul
+                    %li
+                      %a{:href=>"http://google.com"} Google
+                    %li
+                      %a{:href=>"http://yahoo.com"} Yahoo
+                    %li
+                      %a{:href=>"http://bing.com"} Bing
+                    %li
+                      %a{:href=>"javascript:;"} Section #4
+
+                .col
+                  %h3 Help Text
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+      #body
+        = render :partial => "layouts/flashes", :locals => { :flash => flash }
+        = yield
+      #footer
+        %p Copyright &copy; 2010, Ethan Vizitei, all rights reserved
+    =javascript_include_tag "jquery.1.4.2.min","jquery.flot.min","jquery.cookie","jquery.hoverIntent.min","jquery.tablesorter.min","jquery.lightbox-0.5.min","azure","azure.chart","azure.nav","azure.message","azure.portlet","azure.styleswitch",:cache=>"all_global"
+    :plain
+      <!--[if IE]><script  type="text/javascript" src="/javascripts/excanvas.min.js"></script><![endif]-->
+
+    :javascript
+      $(function () 
+      {
+        azure.layoutInit ();
+        azure.nav.init ();
+        azure.portlet.init ();
+        azure.message.init ();
+        azure.styleSwitcher ();
+        azure.layoutSwitcher ();
+        azure.chart.draw ();
+
+        $('#dataTable').tablesorter ({ headers: { 4: {sorter: false} } });
+        $('#gallery a').lightBox ();
+      });

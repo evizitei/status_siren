@@ -1,17 +1,23 @@
-#login
-  #logo
-    %img{:src=>"/images/azure_admin/azure-title-dark.png",:style=>"margin-top: 60px"}
-    -form_for :session,:url=>session_path,:class=>"form label-top" do |form|
-      .field
-        =form.label :email
-        %br
-        =form.text_field :email,{:class=>"text medium"}
-      .field
-        =form.label :password
-        %br
-        =form.password_field :password,{:class=>"text medium"}
-      =form.submit "Sign in",:disable_with => "Please wait"
-	
-%ul
-  %li= link_to "Sign up", sign_up_path 
-  %li= link_to "Forgot password?", new_password_path
+#main
+  .portlet
+    .portlet-header
+      %h4 Login Here
+    .portlet-content
+      -form_for :session,:url=>session_path,:class=>"form label-top" do |form|
+        .field
+          =form.label :email
+          %br
+          =form.text_field :email,{:class=>"text medium"}
+        .field
+          =form.label :password
+          %br
+          =form.password_field :password,{:class=>"text medium"}
+        =form.submit "Sign in",:disable_with => "Please wait"
+#sidebar
+  .portlet
+    .portlet-header
+      %h4 Other Options	
+    .portlet-content
+      %ul
+        %li= link_to "Sign up", sign_up_path 
+        %li= link_to "Forgot password?", new_password_path
