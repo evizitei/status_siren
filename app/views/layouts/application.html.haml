@@ -24,12 +24,9 @@
             #info
               #infoText
                 Welcome back 
-                %a{:href=>"javascript:;"} John Roberts
+                %a{:href=>"javascript:;"}= current_user.name
                 %br 
-                Today is November 15, 2009 17:24
-                %a{:href=>"javascript:;"} View Website
-                | 
-                %a{:href=>"javascript:;"} View Latest Activity
+                == Today is #{Date.today.strftime("%m/%d/%Y")}
               .underlay
       
       #nav.clearfix
