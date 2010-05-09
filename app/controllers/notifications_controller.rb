@@ -3,4 +3,9 @@ class NotificationsController < ApplicationController
   
   def index
   end
+  
+  def create
+    flash[:notice] ="Your notification has been sent!"
+    redirect_to notifications_path
+  end
 end

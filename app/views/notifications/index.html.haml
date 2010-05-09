@@ -1,0 +1,12 @@
+#main
+  .portlet.portlet-closable
+    .portlet-header
+      %h4 Station 14
+    .portlet-content
+      -form_tag :url=>new_notification_path,:class=>"form label-inline" do 
+        %strong Alert:
+        %p Station 14 will be status zero
+        .field
+          =label_tag :until,"until",{:class=>"medium"}
+          =time_select :until,:time,{:value=>1.hour.from_now, :minute_step => 15},{:class=>"medium"}
+        =submit_tag "Send!",:disable_with => "Please wait"
