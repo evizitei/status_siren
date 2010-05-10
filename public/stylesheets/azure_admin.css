@@ -822,3 +822,10 @@ button.btn-sec span { background-position: left -100px !important; }
 {
 	padding: 1px; margin: 2px; border: 1px solid #CCC;
 }
+
+/* -------------------------------------------------------------
+19. MISC
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+#flash_notice{
+	color: red;
+}

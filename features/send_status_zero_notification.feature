@@ -8,7 +8,9 @@ Feature: sending a status zero notification
       And there is a station named "Station 14" in that department
       And there is a firefighter named "Chris Swisher" who is subscribed to messages for "Station 14"
       And I am logged in as a firefighter named "Andrew Elli" who is a publisher for "Station 14"
-    When I select "5:45 PM" as the time
+    When I select "5 PM" from "until_time_4i"
+      And I select "45" from "until_time_5i"
       And I press "Send!"
-    Then I should see "Your notification has been sent!"
-      And the firefighter named "Chris Swisher" should have received a notification saying "Station 14 will be STATUS 0 until 5:40 PM" 
+    Then I should see "Your notification for Station 14 has been sent!"
+    When the system process all background jobs
+    Then the firefighter named "Chris Swisher" should have received a notification saying "Station 14 will be STATUS 0 until 05:45 PM" 

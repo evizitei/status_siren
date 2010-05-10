@@ -31,3 +31,4 @@ config.action_mailer.delivery_method = :test
 #config.gem "shoulda",:lib=>nil
 config.gem "thoughtbot-shoulda", :lib => "shoulda", :source => "http://gems.github.com"
 config.gem "redgreen"
+config.gem "factory_girl", :source => "http://gemcutter.org"

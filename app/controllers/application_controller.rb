@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def parse_time_param(obj,name)
+    Time.parse("#{params[obj]["#{name}(4i)"]}:#{params[obj]["#{name}(5i)"]}")
+  end
 end

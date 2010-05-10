@@ -1,0 +1,13 @@
+.portlet.portlet-closable
+  .portlet-header
+    %h4= station.name
+  .portlet-content
+    %form.form.label-inline{:action=>new_notification_path,:method=>"POST"}
+      =hidden_field_tag request_forgery_protection_token.to_s,form_authenticity_token
+      %strong Alert:
+      %p== #{station.name} will be status zero
+      =hidden_field_tag :station_id,station.id
+      .field
+        =label_tag :until,"until",{:style=>"width:50px;"}
+        =time_select :until,:time,{:value=>1.hour.from_now, :minute_step => 15, :twelve_hour=>true}
+      =submit_tag "Send!",:disable_with => "Please wait"
