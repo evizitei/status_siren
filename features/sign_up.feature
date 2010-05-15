@@ -8,6 +8,8 @@ Feature: Sign up
       And I fill in "Email" with "invalidemail"
       And I fill in "Password" with "password"
       And I fill in "Confirm password" with ""
+      And I fill in "Mobile Phone" with ""
+      And I select "AT&T" from "Mobile Carrier"
       And I press "Sign up"
       Then I should see error messages
 
@@ -16,6 +18,8 @@ Feature: Sign up
       And I fill in "Email" with "email@person.com"
       And I fill in "Password" with "password"
       And I fill in "Confirm password" with "password"
+      And I fill in "Mobile Phone" with "5734895632"
+      And I select "AT&T" from "Mobile Carrier"
       And I press "Sign up"
       Then I should see "instructions for confirming"
       And a confirmation message should be sent to "email@person.com"
