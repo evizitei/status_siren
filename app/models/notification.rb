@@ -1,4 +1,5 @@
 class Notification < ActiveRecord::Base
+  include SMSFu
   has_sms_fu
   belongs_to :station
   belongs_to :user
