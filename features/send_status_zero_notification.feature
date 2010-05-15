@@ -14,3 +14,4 @@ Feature: sending a status zero notification
     Then I should see "Your notification for Station 14 has been sent!"
     When the system process all background jobs
     Then the firefighter named "Chris Swisher" should have received a notification saying "Station 14 will be STATUS 0 until 05:45 PM" 
+      And an sms_fu email should have been delivered to the firefighter named "Chris Swisher"
