@@ -1,0 +1,17 @@
+= form.error_messages 
+.field
+  = form.label :email
+  = form.text_field :email
+.field
+  = form.label :password 
+  = form.password_field :password
+.field
+  = form.label :password_confirmation, "Confirm password"
+  = form.password_field :password_confirmation
+.field
+  =form.label :mobile_phone,"Mobile Phone"
+  =form.text_field :mobile_phone
+.field
+  =form.label :mobile_carrier,"Mobile Carrier"
+  = carrier_select('user[mobile_carrier]', "Please choose a carrier")
+  
