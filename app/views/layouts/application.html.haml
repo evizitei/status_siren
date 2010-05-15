@@ -26,9 +26,10 @@
                 Welcome back 
                 %a{:href=>"javascript:;"}= current_user.name
                 %br 
-                == Today is #{Date.today.strftime("%m/%d/%Y")}
+                == Today is #{Date.today.strftime("%m/%d/%Y")} at #{(current_user.department.nil? ? "...." : current_user.department.name)}
                 %br
                 =link_to "Sign Out","/sign_out"
+                =link_to "My Account",edit_user_path(current_user)
               .underlay
       
       #nav.clearfix

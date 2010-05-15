@@ -12,6 +12,9 @@
   =form.label :mobile_phone,"Mobile Phone"
   =form.text_field :mobile_phone
 .field
+  =form.label :department_id,"Department:"
+  =form.select :department_id,options_from_collection_for_select(Department.all,:id,:name,form.object.department_id)
+.field
   =form.label :mobile_carrier,"Mobile Carrier"
   = carrier_select('user[mobile_carrier]', "Please choose a carrier")
   

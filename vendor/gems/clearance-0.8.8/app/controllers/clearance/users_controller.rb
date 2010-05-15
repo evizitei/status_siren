@@ -19,6 +19,19 @@ class Clearance::UsersController < ApplicationController
       render :template => 'users/new'
     end
   end
+  
+  def edit
+    @user = ::User.find(params[:id])
+  end
+  
+  def update
+    @user = ::User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to("/")
+    else
+      render :template => 'users/edit'
+    end
+  end
 
   private
 
