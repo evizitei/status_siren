@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   has_many :received_notifications
   has_many :subscriptions
   has_many :stations,:through=>:subscriptions
+  
+  validates_uniqueness_of :mobile_phone
+  validates_length_of :mobile_phone,:is=>10
 end

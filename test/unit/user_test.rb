@@ -12,6 +12,10 @@ class UserTest < ActiveSupport::TestCase
       @user = Factory(:normal_user)
     end
     
+    subject { @user }
+    should_validate_uniqueness_of :mobile_phone,:email
+    should_ensure_length_is :mobile_phone,10
+    
     context "being sent a notification" do
       setup do
         SmsNotifier.expects(:deliver_sms_message)
