@@ -4,6 +4,10 @@ class Clearance::UsersController < ApplicationController
   skip_before_filter :authenticate, :only => [:new, :create]
   before_filter :redirect_to_root,  :only => [:new, :create], :if => :signed_in?
   filter_parameter_logging :password
+  
+  def index
+    @users = ::User.all
+  end
 
   def new
     @user = ::User.new(params[:user])
