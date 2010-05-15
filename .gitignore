@@ -10,3 +10,4 @@ tmp/*.*
 *.swp
 *.swo
 rerun.txt
+capybara*.html
