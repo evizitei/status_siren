@@ -27,6 +27,8 @@
                 %a{:href=>"javascript:;"}= current_user.name
                 %br 
                 == Today is #{Date.today.strftime("%m/%d/%Y")}
+                %br
+                =link_to "Sign Out","/sign_out"
               .underlay
       
       #nav.clearfix
