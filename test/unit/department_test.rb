@@ -1,8 +1,5 @@
 require 'test_helper'
 
 class DepartmentTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should_have_many :stations
 end
