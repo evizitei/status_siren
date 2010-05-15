@@ -1,0 +1,19 @@
+<h1>New station</h1>
+
+<% form_for(@station) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%=form.label :department_id,"Department:"%><br/>
+    <%=form.select :department_id,options_from_collection_for_select(Department.all,:id,:name,form.object.department_id)%>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', stations_path %>

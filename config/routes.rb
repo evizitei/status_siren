@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :stations
+
+  map.resources :departments
+
   map.resources :notifications
 
   Clearance::Routes.draw(map)

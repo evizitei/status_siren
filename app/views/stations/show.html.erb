@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @station.name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @station.department_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>
