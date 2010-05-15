@@ -24,7 +24,7 @@
 #nav li.hover  .sub_nav li a { 	color: #111 !important; }
 .sub_nav { border-bottom: 4px solid #6A9D2A; }	
 
-.portlet-header { background: url(/images/azure_admin/portlet-header-green.png) repeat-x top center; color: #fff; }
+.portlet-header { background: url(/images/azure_admin/portlet-header.png) repeat-x top center; color: #fff; }
 .portlet-tab-nav .portlet-tab-nav-active  a { color: #578222; text-decoration: none; }	
 			
 #body h1#pageTitle { color: #578222; }
@@ -32,6 +32,8 @@
 #sidebar .portlet-header { color: #FFF; }
 	
 #pg a.current { color: #FFF; border: 1px solid #578222; background-color: #578222; }
+
+input.submit{ color: #FFF; background-color: #578222;}
 
 button,
 button span { background: transparent url(/images/azure_admin/button_sprite.png) no-repeat; }

@@ -4,7 +4,7 @@
   %head
     %meta{"http-equiv"=>"Content-type",:content=>"text/html",:charset=>"utf-8"}
     %title Status Siren
-    =stylesheet_link_tag "azure_admin","azure_admin/themes/green/css/custom"
+    =stylesheet_link_tag "azure_admin","azure_admin/themes/green/css/green"
     :plain
       <!--[if IE 8]>    
         <link rel="stylesheet" href="/stylesheets/azure_admin_ie8.css" type="text/css" media="screen" title="ie8" charset="utf-8" />
@@ -26,7 +26,7 @@
                 Welcome back 
                 %a{:href=>"javascript:;"}= current_user.name
                 %br 
-                == Today is #{Date.today.strftime("%m/%d/%Y")} at #{(current_user.department.nil? ? "...." : current_user.department.name)}
+                == Today is #{Date.today.strftime("%m/%d/%Y")}
                 %br
                 =link_to "Sign Out","/sign_out"
                 =link_to "My Account",edit_user_path(current_user)
@@ -37,42 +37,12 @@
           -if current_user
             %li
               %a.current{:href=>""} Dashboard
-            %li
-              %a{:href=>"javascript:;"} Mega Drop Menu
-              .sub_nav
-                .col
-                  %h3 Help Links
-                  %ul
-                    %li
-                      %a{:href=>"http://google.com"} Google
-                    %li
-                      %a{:href=>"http://yahoo.com"} Yahoo
-                    %li
-                      %a{:href=>"http://bing.com"} Bing
-                    %li
-                      %a{:href=>"javascript:;"} Section #4
-
-                .col
-                  %h3 Help Links
-                  %ul
-                    %li
-                      %a{:href=>"http://google.com"} Google
-                    %li
-                      %a{:href=>"http://yahoo.com"} Yahoo
-                    %li
-                      %a{:href=>"http://bing.com"} Bing
-                    %li
-                      %a{:href=>"javascript:;"} Section #4
-
-                .col
-                  %h3 Help Text
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
       #body
         = render :partial => "layouts/flashes", :locals => { :flash => flash }
         = yield
       #footer
         %p Copyright &copy; 2010, Ethan Vizitei, all rights reserved
-    =javascript_include_tag "jquery.1.4.2.min","jquery.flot.min","jquery.cookie","jquery.hoverIntent.min","jquery.tablesorter.min","jquery.lightbox-0.5.min","azure","azure.chart","azure.nav","azure.message","azure.portlet","azure.styleswitch",:cache=>"all_global"
+    =javascript_include_tag "jquery.1.4.2.min","jquery.cookie","jquery.hoverIntent.min","jquery.tablesorter.min","jquery.lightbox-0.5.min","azure","azure.nav","azure.message","azure.portlet","azure.styleswitch",:cache=>"all_global"
     :plain
       <!--[if IE]><script  type="text/javascript" src="/javascripts/excanvas.min.js"></script><![endif]-->
 
@@ -85,7 +55,6 @@
         azure.message.init ();
         azure.styleSwitcher ();
         azure.layoutSwitcher ();
-        azure.chart.draw ();
 
         $('#dataTable').tablesorter ({ headers: { 4: {sorter: false} } });
         $('#gallery a').lightBox ();

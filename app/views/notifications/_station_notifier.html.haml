@@ -3,13 +3,16 @@
   .portlet-header
     %h4= station.name
   .portlet-content
-    =button_to "Unsubscribe",user_subscription_path(current_user,subscription),:method=>:delete
+    .right_box=button_to "Unsubscribe",user_subscription_path(current_user,subscription),:method=>:delete
     %form.form.label-inline{:action=>new_notification_path,:method=>"POST"}
       =hidden_field_tag request_forgery_protection_token.to_s,form_authenticity_token
-      %strong Alert:
-      %p== #{station.name} will be status zero
       =hidden_field_tag :station_id,station.id
       .field
-        =label_tag :until,"until",{:style=>"width:50px;"}
+        =label_tag :until,"status zero until",{:style=>"width:100px;"}
         =time_select :until,:time,{:value=>1.hour.from_now, :minute_step => 15, :twelve_hour=>true}
-      =submit_tag "Send!",:disable_with => "Please wait"
+      =submit_tag "Send!",{:disable_with => "Please wait",:class=>"submit"}
+
+%style
+  :sass
+    .right_box
+      :float right
