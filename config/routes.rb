@@ -2,6 +2,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :notifications
 
   Clearance::Routes.draw(map)
+  
+  map.resources :users do |users|
+    users.resources :subscriptions
+  end
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
