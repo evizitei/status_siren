@@ -6,7 +6,9 @@ class SendNotification
   end
   
   def perform
-    notification = @sender.published_notifications.create!(:station=>@station,:message=>@message)
+    sender = User.find(@sender.id)
+    station = Station.find(@station.id)
+    notification = sender.published_notifications.create!(:station=>station,:message=>@message)
     notification.deliver!
   end
 end
