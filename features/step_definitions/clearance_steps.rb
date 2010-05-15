@@ -1,7 +1,7 @@
 # General
 
 Then /^I should see error messages$/ do
-  assert_match /error(s)? prohibited/m, response.body
+  assert_match /error(s)? prohibited/m, page.body
 end
 
 # Database
@@ -27,16 +27,15 @@ end
 # Session
 
 Then /^I should be signed in$/ do
-  assert controller.signed_in?
+  Then %Q{I should see "Welcome back"}
 end
 
 Then /^I should be signed out$/ do
-  assert ! controller.signed_in?
+  Then %Q{I should not see "Welcome back"}
 end
 
 When /^session is cleared$/ do
-  request.reset_session
-  controller.instance_variable_set(:@_current_user, nil)
+
 end
 
 Given /^I have signed in with "(.*)\/(.*)"$/ do |email, password|
