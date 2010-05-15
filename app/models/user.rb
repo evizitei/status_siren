@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   
   validates_uniqueness_of :mobile_phone
   validates_length_of :mobile_phone,:is=>10
+  
+  def subscribed_to?(station)
+    subscriptions.for_station(station).size > 0
+  end
 end

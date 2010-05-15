@@ -27,5 +27,24 @@ class UserTest < ActiveSupport::TestCase
         assert_equal @notification,@user.received_notifications.last.notification
       end
     end    
+    
+    context "without subscriptions" do
+      setup { @user.subscriptions.delete_all}
+
+      should "not register as being subscribed to any station" do
+        assert_equal false,@user.subscribed_to?(Factory(:station))
+      end
+    end
+    
+    context "with a subscription" do
+      setup do
+        @station = Factory(:station)
+        Factory(:subscription,:user=>@user,:station=>@station)
+      end
+      
+      should "register subscription when asked" do
+        assert @user.subscribed_to?(@station)
+      end
+    end
   end
 end
