@@ -1,3 +1,4 @@
 #main
   -@stations.each do |station|
     =render(:partial=>"station_notifier",:locals=>{:station=>station})
+  =button_to "Add Station",new_user_subscription_path(current_user),{:method=>"get"}

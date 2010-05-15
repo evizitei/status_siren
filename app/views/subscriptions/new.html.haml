@@ -1,0 +1,4 @@
+-form_for :subscription,@subscription,:url=>user_subscriptions_path(current_user,@subscription),:html=>{:method=>:post} do |form|
+  =form.label :station_id,"Station:"
+  =form.select :station_id,options_from_collection_for_select(@stations,:id,:name)
+  =form.submit "Subscribe!"
