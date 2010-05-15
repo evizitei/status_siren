@@ -1,0 +1,8 @@
+#main
+  .portlet
+    .portlet-header
+      %h4 Edit my Account
+    .portlet-content
+      -form_for @user do |form|
+        =render :partial => '/users/form', :object => form
+        =form.submit 'Save', :disable_with => 'Please wait...'
