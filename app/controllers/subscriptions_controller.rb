@@ -15,4 +15,9 @@ class SubscriptionsController < ApplicationController
     end
     redirect_to root_path
   end
+  
+  def destroy
+    Subscription.find(params[:id]).destroy
+    redirect_to root_path
+  end
 end

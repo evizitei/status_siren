@@ -1,7 +1,9 @@
+-subscription = current_user.subscriptions.for_station(station).first
 .portlet.portlet-closable.station_notifier
   .portlet-header
     %h4= station.name
   .portlet-content
+    =button_to "Unsubscribe",user_subscription_path(current_user,subscription),:method=>:delete
     %form.form.label-inline{:action=>new_notification_path,:method=>"POST"}
       =hidden_field_tag request_forgery_protection_token.to_s,form_authenticity_token
       %strong Alert:
