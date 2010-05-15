@@ -8,8 +8,8 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%=form.label :department_id,"Department:"%><br/>
-    <%=form.select :department_id,options_from_collection_for_select(Department.all,:id,:name,form.object.department_id)%>
+    <%=f.label :department_id,"Department:"%><br/>
+    <%=f.select :department_id,options_from_collection_for_select(Department.all,:id,:name,f.object.department_id)%>
   </p>
   <p>
     <%= f.submit 'Create' %>

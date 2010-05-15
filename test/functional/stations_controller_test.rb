@@ -21,23 +21,24 @@ class StationsControllerTest < ActionController::TestCase
   end
 
   test "should show station" do
-    get :show, :id => stations(:one).to_param
+    get :show, :id => Factory(:station).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => stations(:one).to_param
+    get :edit, :id => Factory(:station).to_param
     assert_response :success
   end
 
   test "should update station" do
-    put :update, :id => stations(:one).to_param, :station => { }
+    put :update, :id => Factory(:station).to_param, :station => { }
     assert_redirected_to station_path(assigns(:station))
   end
 
   test "should destroy station" do
+    station = Factory(:station)
     assert_difference('Station.count', -1) do
-      delete :destroy, :id => stations(:one).to_param
+      delete :destroy, :id => station.to_param
     end
 
     assert_redirected_to stations_path
