@@ -16,11 +16,11 @@ ethan.update_password("fire_district","fire_district")
 
 Subscription.find_or_create_by_station_id_and_user_id(station.id,ethan.id)
 
-stephen = User.find_or_create_by_email("sdunkin@bcfdmo.com")
-stephen.update_attributes!(:name=>"Stephen Dunkin",:department_id=>bcfpd.id,:password=>"fire_district",:email=>"sdunkin@bcfdmo.com",:email_confirmed=>true,:mobile_phone=>"5732390700")
-stephen.update_password("fire_district","fire_district")
-
-Subscription.find_or_create_by_station_id_and_user_id(station.id,stephen.id)
+# stephen = User.find_or_create_by_email("sdunkin@bcfdmo.com")
+# stephen.update_attributes!(:name=>"Stephen Dunkin",:department_id=>bcfpd.id,:password=>"fire_district",:email=>"sdunkin@bcfdmo.com",:email_confirmed=>true,:mobile_phone=>"5732390700")
+# stephen.update_password("fire_district","fire_district")
+# 
+# Subscription.find_or_create_by_station_id_and_user_id(station.id,stephen.id)
 
 elli = User.find_or_create_by_email("aelli@bcfdmo.com")
 elli.update_attributes!(:name=>"Andrew Elli",:department_id=>bcfpd.id,:password=>"fire_district",:email=>"aelli@bcfdmo.com",:email_confirmed=>true,:mobile_phone=>"6363286280")
